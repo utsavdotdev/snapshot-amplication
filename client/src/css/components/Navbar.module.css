@@ -1,0 +1,195 @@
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 75px;
+  background-color: var(--bg1);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / 0.1),
+    0 1px 2px -1px rgb(0 0 0 / 0.1);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+}
+.left{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.left span{
+  background-color: var(--secondary);
+  border-radius: 4px;
+  width: 38px;
+  height: 38px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  transition: 0.3s;
+}
+.left span:hover{
+  animation:spin 2s infinite linear;
+  border-radius:100%;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.my{
+  color: var(--white);
+  font-size:16px;
+  font-weight: 400;
+  padding: 6px 8px;
+  background-color: var(--bg2);
+  border-radius: 4px;
+  margin-left: 12px;
+  transition: 0.3s;
+}
+.my:hover{
+  background-color: var(--bg4);
+  transform: scale(1.1);
+}
+.left .logo_name{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.auth_con {
+  display: flex;
+  align-items: center;
+  padding: 0px 8px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+.auth_con button {
+  display: flex;
+  align-items: center;
+  line-height: 46px;
+  width: 46px;
+  height: 46px;
+  padding-left: 8px;
+  background-color: var(--bg4);
+  border-radius: 50%;
+  font-size: 30px;
+  color: var(--white);
+  transition: 0.3s;
+  position: absolute;
+  left: -48px;
+  overflow: hidden;
+}
+.auth_con p {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.auth_con:hover button {
+  position: absolute;
+  width: 145px;
+  border-radius: 100vw;
+  z-index: -1;
+}
+
+/* ripple effecr of button */
+.auth_con button:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(156, 156, 156, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.auth_con button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+.user{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.user button{
+  color: var(--white);
+  font-size: 28px;
+  padding:10px;
+  background-color:transparent;
+  border-radius:100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user button:hover{
+  background-color: var(--bg3);
+}
+
+.main {
+  margin-top: 60px;
+}
+
+.main-container {
+  composes: container;
+  margin-left: auto;
+  margin-right: auto;
+  padding:3rem
+}
+
+@media screen and (max-width:650px) {
+ .main-container{
+  padding: 0rem;
+ }
+}
