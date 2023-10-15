@@ -17,3 +17,11 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Images {
+  createdAt DateTime @default(now())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt DateTime @updatedAt
+  url       String?
+  userId    String?
+}
