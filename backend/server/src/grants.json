@@ -1,8 +1,20 @@
 [
   {
+    "role": "Admin",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
     "role": "user",
     "resource": "User",
     "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "Admin",
+    "resource": "User",
+    "action": "create:any",
     "attributes": "*"
   },
   {
@@ -12,9 +24,21 @@
     "attributes": "*"
   },
   {
+    "role": "Admin",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
     "role": "user",
     "resource": "User",
     "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "Admin",
+    "resource": "User",
+    "action": "delete:any",
     "attributes": "*"
   },
   {
@@ -24,8 +48,74 @@
     "attributes": "*"
   },
   {
+    "role": "Admin",
+    "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
     "role": "user",
     "resource": "User",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "Admin",
+    "resource": "Images",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Images",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "Admin",
+    "resource": "Images",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Images",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "Admin",
+    "resource": "Images",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Images",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "Admin",
+    "resource": "Images",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Images",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "Admin",
+    "resource": "Images",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Images",
     "action": "read:any",
     "attributes": "*"
   }
