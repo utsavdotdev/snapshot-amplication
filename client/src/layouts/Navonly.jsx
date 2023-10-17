@@ -3,10 +3,12 @@ import { Navigate, Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import styles from "../css/pages/Dashboard.module.css";
 import { me } from "../lib/auth";
+import * as imagesLib from "../lib/image";
 
 const Navonly = () => {
   const [user, setUser] = useState();
-  
+  const [images, setImages] = useState([]);
+
   useEffect(() => {
     async function getUser() {
       const result = await me();
@@ -16,10 +18,12 @@ const Navonly = () => {
   }, [setUser]);
 
   const setUserFetchImage = (user) => {
-    
     setUser(user);
     if (!user) return;
-    //fetch user's image
+    const res = imagesLib.getAll(user?.id);
+    if (res) {
+      setImages(res.data);
+    }
   };
 
   return (
@@ -27,7 +31,7 @@ const Navonly = () => {
       <Navbar setUser={setUserFetchImage} user={user} />
       <main className={styles.main}>
         <div className={styles.main_container}>
-          <Outlet context={{ user }} />
+          <Outlet context={{ user,images }} />
         </div>
       </main>
     </>

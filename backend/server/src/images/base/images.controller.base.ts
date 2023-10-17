@@ -55,8 +55,8 @@ export class ImagesControllerBase {
         updatedAt: true,
         url: true,
         userId: true,
-      },
-    });
+        },
+      });
   }
 
   @common.UseInterceptors(AclFilterResponseInterceptor)

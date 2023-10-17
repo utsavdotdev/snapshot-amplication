@@ -62,6 +62,7 @@ const Images = () => {
 
   const saveImage = async () => {
     try {
+      console.log(user?.id, img)
       const addImg = await imagesLib.create(user?.id, img);
       if (addImg) {
         toast.success("Image saved");

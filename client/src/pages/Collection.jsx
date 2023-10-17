@@ -19,7 +19,18 @@ const Collection = () => {
     }
   }, []);
 
-  const fetchImages = async () => {};
+  const images = [
+    {
+      url:"/p1.png"
+    },
+    {
+      url:"/p2.png"
+    },
+    {
+      url:"/p3.png"
+    }
+  ];
+
   const dltImage = async (id) => {};
   return (
     <>
@@ -27,7 +38,7 @@ const Collection = () => {
         <div className={styles.collection_con}>
           <h2>Images</h2>
           <div className={styles.images_con}>
-            {imgs?.map(({ url, id }) => (
+            {images?.map(({ url, id }) => (
               <div className={styles.image} key={id}>
                 <img src={url} />
                 <div className={styles.overlay}>

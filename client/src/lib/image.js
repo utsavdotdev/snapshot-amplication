@@ -21,11 +21,11 @@ export const getAll = async (user_id) => {
     where: { userId: { id: user_id } },
     orderBy: { createdAt: "asc" },
   });
-  const result = (await get(createUrl(`/api/images?${query}`)).catch(() => null))
+  const result = (await get(createUrl(`/api/images?where[userId][equals]=${user_id}`)).catch(() => null))
     ?.data;
-
+  console.log(result)
   if (!result) {
-    alert("Could not get images");
+    console.log("Could not get images");
     return [];
   }
 
