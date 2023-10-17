@@ -10,7 +10,7 @@ export default function Router() {
       element: <Navonly />,
       children: [
         { path: "/", element: <Dashboard /> },
-        { path: "/images", element: <Images /> },
+        { path: "/img", element: <Images /> },
         { path: "/collection", element: <Collection /> },
       ],
     },

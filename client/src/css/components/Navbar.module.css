@@ -101,10 +101,10 @@
   line-height: 46px;
   width: 46px;
   height: 46px;
-  padding-left: 8px;
+  padding-left: 10px;
   background-color: var(--bg4);
   border-radius: 50%;
-  font-size: 30px;
+  font-size: 25px;
   color: var(--white);
   transition: 0.3s;
   position: absolute;
@@ -181,15 +181,99 @@
   margin-top: 60px;
 }
 
-.main-container {
-  composes: container;
-  margin-left: auto;
-  margin-right: auto;
-  padding:3rem
-}
 
 @media screen and (max-width:650px) {
  .main-container{
   padding: 0rem;
  }
+}
+
+
+/* Pop up form */
+.wrapper{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form{
+  width: 450px;
+  background-color: var(--bg1);
+  border-radius: 8px;
+  padding: 0.1rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.auth_header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth_header p{
+  margin-top: 20px;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.close{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  font-size: 30px;
+  color: var(--white);
+  background-color: var(--secondary);
+  width: 50px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 8px;
+}
+.input_field{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  gap: 1rem;
+}
+.input{
+  padding: 0.7rem 0.8rem;
+  border-radius: 5px;
+  border: 1px solid var(--bg3);
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--white);
+  background-color: var(--bg2);
+  transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.submit{
+  padding: 0.7rem 0.8rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--secondary);
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.need{
+  color: var(--gray-text);
+  font-size: 1.05rem;
+  text-decoration: underline;
+}
+/*make the input field focus*/
+.input:focus{
+  outline: 2px solid var(--secondary);
 }
