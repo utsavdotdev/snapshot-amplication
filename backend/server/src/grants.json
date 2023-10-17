@@ -1,5 +1,11 @@
 [
   {
+    "role": "imageUser",
+    "resource": "User",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
     "role": "Admin",
     "resource": "User",
     "action": "read:own",
@@ -9,6 +15,12 @@
     "role": "user",
     "resource": "User",
     "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "imageUser",
+    "resource": "User",
+    "action": "create:any",
     "attributes": "*"
   },
   {
@@ -24,6 +36,12 @@
     "attributes": "*"
   },
   {
+    "role": "imageUser",
+    "resource": "User",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
     "role": "Admin",
     "resource": "User",
     "action": "update:any",
@@ -36,6 +54,12 @@
     "attributes": "*"
   },
   {
+    "role": "imageUser",
+    "resource": "User",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
     "role": "Admin",
     "resource": "User",
     "action": "delete:any",
@@ -45,6 +69,12 @@
     "role": "user",
     "resource": "User",
     "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "imageUser",
+    "resource": "User",
+    "action": "read:any",
     "attributes": "*"
   },
   {
@@ -60,6 +90,12 @@
     "attributes": "*"
   },
   {
+    "role": "imageUser",
+    "resource": "Images",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
     "role": "Admin",
     "resource": "Images",
     "action": "read:own",
@@ -69,6 +105,12 @@
     "role": "user",
     "resource": "Images",
     "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "imageUser",
+    "resource": "Images",
+    "action": "create:any",
     "attributes": "*"
   },
   {
@@ -84,6 +126,12 @@
     "attributes": "*"
   },
   {
+    "role": "imageUser",
+    "resource": "Images",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
     "role": "Admin",
     "resource": "Images",
     "action": "update:any",
@@ -96,6 +144,12 @@
     "attributes": "*"
   },
   {
+    "role": "imageUser",
+    "resource": "Images",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
     "role": "Admin",
     "resource": "Images",
     "action": "delete:any",
@@ -105,6 +159,12 @@
     "role": "user",
     "resource": "Images",
     "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "imageUser",
+    "resource": "Images",
+    "action": "read:any",
     "attributes": "*"
   },
   {
