@@ -25,7 +25,7 @@ export const getAll = async (user_id) => {
     ?.data;
 
   if (!result) {
-    alert("Could not get tasks");
+    alert("Could not get images");
     return [];
   }
 

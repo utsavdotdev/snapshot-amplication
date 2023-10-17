@@ -68,7 +68,7 @@ export class AuthService {
      data: {
        username,
        password,
-       roles: ["User"], // Here we assign every new user the `User` role
+       roles: ["Image User"], // Here we assign every new user the `User` role
      },
    });
    // If creating a new user fails throw an error
