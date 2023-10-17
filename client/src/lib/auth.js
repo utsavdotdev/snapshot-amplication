@@ -25,15 +25,18 @@ export const login = async (username, password) => {
 };
 
 export const signup = async (username, password) => {
-  const result = (
-    await post(createUrl("/api/signup"), { username, password }).catch(
-      () => null
-    )
-  )?.data;
-
-  if (!result) {
-    return alert("Could not sign up");
+  try {
+    const result = (
+      await post(createUrl("/api/signup"), { username, password }).catch(
+        () => null
+      )
+    )?.data;
+    if (!result) {
+      return alert("Could not sign up");
+    }
+    setStoredJwt(result.accessToken);
+    return me();
+  } catch (error) {
+    console.log(error);
   }
-  setStoredJwt(result.accessToken);
-  return me();
 };

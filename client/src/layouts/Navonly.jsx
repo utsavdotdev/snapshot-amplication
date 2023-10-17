@@ -16,12 +16,12 @@ const Navonly = () => {
   }, [setUser]);
 
   const setUserFetchImage = (user) => {
+    
     setUser(user);
     if (!user) return;
     //fetch user's image
   };
 
-  console.log(user);
   return (
     <>
       <Navbar setUser={setUserFetchImage} user={user} />

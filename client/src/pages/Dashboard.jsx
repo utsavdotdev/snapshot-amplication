@@ -5,28 +5,35 @@ import { MdCamera } from "react-icons/md";
 import styles from "../css/pages/Dashboard.module.css";
 import { toast } from "react-hot-toast";
 import Page from "../components/Page";
+import axios from "axios";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const { user } = useOutletContext();
-
   const [more, setMore] = useState(false);
 
   // User Input states
   const [data, setData] = useState({
     url: "",
-    width: null,
-    height: null,
+    width: 1920,
+    height: 1080,
     type: "png",
     block_ads: false,
     block_cookies: false,
-    dark_mode: false,
-    retina: false,
     full_page: false,
     fresh: false,
+    scroll_page: false,
   });
 
-  const sendUrl = () => {};
+  const sendUrl = async () => {
+    if (data.url === "") {
+      setData({});
+      return toast.error("Please enter a URL", { id: "url" });
+    }
+    navigate("/img", {
+      state: data,
+    });
+  };
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -122,30 +129,6 @@ const Dashboard = () => {
                         <input
                           type="checkbox"
                           className={styles.checkbox}
-                          name="dark_mode"
-                          checked={data.dark_mode}
-                          onChange={() =>
-                            setData({ ...data, dark_mode: !data.dark_mode })
-                          }
-                        />
-                        <span>Dark mode</span>
-                      </div>
-                      <div className={styles.check_con}>
-                        <input
-                          type="checkbox"
-                          className={styles.checkbox}
-                          name="retina"
-                          checked={data.retina}
-                          onChange={() =>
-                            setData({ ...data, retina: !data.retina })
-                          }
-                        />
-                        <span>Retina</span>
-                      </div>
-                      <div className={styles.check_con}>
-                        <input
-                          type="checkbox"
-                          className={styles.checkbox}
                           name="full_page"
                           checked={data.full_page}
                           onChange={() =>
@@ -165,6 +148,18 @@ const Dashboard = () => {
                           }
                         />
                         <span>Fresh Screenshot</span>
+                      </div>
+                      <div className={styles.check_con}>
+                        <input
+                          type="checkbox"
+                          className={styles.checkbox}
+                          name="scroll_page"
+                          checked={data.scroll_page}
+                          onChange={() =>
+                            setData({ ...data, scroll_page: !data.scroll_page })
+                          }
+                        />
+                        <span>Scroll Page</span>
                       </div>
                     </div>
                   </div>

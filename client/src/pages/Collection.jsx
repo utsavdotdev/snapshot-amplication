@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 import styles from "../css/pages/Collection.module.css";
 import { FiDownload } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
@@ -10,6 +10,14 @@ import Page from "../components/Page";
 const Collection = () => {
   const { user } = useOutletContext();
   const [imgs, setImgs] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+      return;
+    }
+  }, []);
 
   const fetchImages = async () => {};
   const dltImage = async (id) => {};
